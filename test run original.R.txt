@@ -1,0 +1,16 @@
+patents <- read.csv("patents_20.csv", header = TRUE)
+head(patents)
+
+table(patents$ee_country)
+
+library(dplyr)
+
+patents_by_country <- patents %>%
+  			group_by(ee_country) %>%
+  			summarize(count = n())
+
+patents_by_country
+head(patents_by_country)
+
+
+
