@@ -13,4 +13,12 @@ patents_by_country
 head(patents_by_country)
 
 
+patents_us <- subset(patents, ee_country == "US")
+nrow(patents_us)
 
+patents_us$time_to_approval <- patents_us$grantyear - 
+					patents_us$applyyear
+
+aggregate(time_to_approval ~ ee_state,
+		data = patents_us, 
+		FUN = mean)
