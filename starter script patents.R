@@ -46,5 +46,5 @@ aggregate(time_to_approval ~ ee_state,
 
 
 
-# And so on............. \n
+# And so on.............
 
